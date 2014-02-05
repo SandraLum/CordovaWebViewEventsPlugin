@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="org.apache.cordova.webvewievents"
+           id="org.apache.cordova.webviewevents"
       version="0.0.1">
 
     <name>WebViewEvents</name>
     <description>Cordova WebView Events Plugin</description>
     <license>SL</license>
+    <author>Sandra.Lum</author>
+
     <keywords>cordova,webviewevents</keywords>
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git</repo>
 
