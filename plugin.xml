@@ -12,7 +12,7 @@
     <keywords>cordova,webviewevents</keywords>
     <repo>https://github.com/SandraLum/CordovaWebViewEventsPlugin.git</repo>
 
-    <js-module src="www/webviewevents.js" name="webviewevents">
+    <js-module src="www/WebViewEvents.js" name="webviewevents">
         <merges target="navigator.webviewevents" />
     </js-module>
 
@@ -20,7 +20,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="WebViewEvents">
-                <param name="android-package" value="org.apache.cordova.webviewevents"/>
+                <param name="android-package" value="org.apache.cordova.webviewevents.WebViewEvents"/>
             </feature>
         </config-file>
 

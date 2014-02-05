@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 
 /**
@@ -44,8 +45,10 @@ public class WebViewEvents extends CordovaPlugin {
      * @return                  True when the action was valid, false otherwise.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    	Log.d("SL", action);
+    	
         if (action.equals("exitEdit")) {
-            this.exitEdit();
+            this.exitEdit(callbackContext);
         }
         else {
             return false;
@@ -63,9 +66,13 @@ public class WebViewEvents extends CordovaPlugin {
     /**
      * Exit any editing done
      */
-    public void exitEdit() {
+    public void exitEdit(CallbackContext callbackContext) {
     	Context ctx = cordova.getActivity().getBaseContext();
 		InputMethodManager imm = (InputMethodManager)ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
-		imm.hideSoftInputFromWindow(webView.getWindowToken(), 0);
+		imm.hideSoftInputFromWindow(this.webView.getWindowToken(), 0);
+		
+        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+        pluginResult.setKeepCallback(true);
+        callbackContext.sendPluginResult(pluginResult);		
     }
 }
