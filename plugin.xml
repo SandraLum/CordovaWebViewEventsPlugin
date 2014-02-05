@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.apache.cordova.webvewievents"
+      version="0.0.1">
+
+    <name>WebViewEvents</name>
+    <description>Cordova WebView Events Plugin</description>
+    <license>SL</license>
+    <keywords>cordova,webviewevents</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git</repo>
+
+    <js-module src="www/webviewevents.js" name="webviewevents">
+        <merges target="navigator.webviewevents" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebViewEvents">
+                <param name="android-package" value="org.apache.cordova.WebViewEvents"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/WebViewEvents.java" target-dir="src/org/apache/cordova/webviewevents" />
+
+        <!-- android specific webviewevents apis -->
+        <js-module src="www/android/webviewevents.js" name="webviewevents_android">
+            <merges target="navigator.webviewevents" />
+        </js-module>
+
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="WebViewEvents">
+                <param name="ios-package" value="CDVWebViewEvents"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVWebViewEvents.h" />
+	    <source-file src="src/ios/CDVWebViewEvents.m" />
+    </platform>
+
+</plugin>
