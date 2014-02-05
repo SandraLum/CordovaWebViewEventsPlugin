@@ -1,4 +1,4 @@
-CordovaWebViewEventsPlugin
-==========================
+Cordova WebView Events
+============================
 
-Cordova WebView Events Plugin
+Cordova plugin hook for the https://github.com/SandraLum/CordovaWebViewEventsPlugin.git
