@@ -8,12 +8,9 @@
 - (void)exitEdit:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = command.callbackId;
-	[webView endEditing:YES];
-    [self.commandDelegate sendPluginResult:null callbackId:callbackId];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+	[self.webView endEditing:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
-
-@end
-
-@synthesize callbackId;
 
 @end

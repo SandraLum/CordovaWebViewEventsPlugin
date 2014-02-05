@@ -7,7 +7,3 @@
 - (void)exitEdit:(CDVInvokedUrlCommand*)command;
 
 @end
-
-@property (nonatomic, copy) NSString* callbackId;
-
-@end
