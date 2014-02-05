@@ -70,9 +70,6 @@ public class WebViewEvents extends CordovaPlugin {
     	Context ctx = cordova.getActivity().getBaseContext();
 		InputMethodManager imm = (InputMethodManager)ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(this.webView.getWindowToken(), 0);
-		
-        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-        pluginResult.setKeepCallback(true);
-        callbackContext.sendPluginResult(pluginResult);		
+			
     }
 }
