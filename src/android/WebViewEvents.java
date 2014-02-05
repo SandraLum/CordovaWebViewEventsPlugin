@@ -3,11 +3,15 @@ package org.apache.cordova.webviewevents;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.LOG;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.content.Context;
+import android.view.inputmethod.InputMethodManager;
 
 /**
  * This class provides access to notifications on the device.
@@ -60,8 +64,8 @@ public class WebViewEvents extends CordovaPlugin {
      * Exit any editing done
      */
     public void exitEdit() {
-		InputMethodManager imm = (InputMethodManager)getSystemService(
-		Context.INPUT_METHOD_SERVICE);
+    	Context ctx = cordova.getActivity().getBaseContext();
+		InputMethodManager imm = (InputMethodManager)ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(webView.getWindowToken(), 0);
     }
 }

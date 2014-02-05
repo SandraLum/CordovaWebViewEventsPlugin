@@ -25,12 +25,6 @@
         </config-file>
 
         <source-file src="src/android/WebViewEvents.java" target-dir="src/org/apache/cordova/webviewevents" />
-
-        <!-- android specific webviewevents apis -->
-        <js-module src="www/webviewevents.js" name="webviewevents_android">
-            <merges target="navigator.webviewevents" />
-        </js-module>
-
     </platform>
 
     <!-- ios -->
